@@ -2,7 +2,7 @@ import { updateDisplay } from './updateDisplay';
 import { getDisplayContent, setDisplayContent } from './displayHandler';
 import calculate from './calculate';
 import './style.css';
-document.getElementById('app').innerHTML = '<p id="mode"></p><div id="display"><p id="value">2137</p></div><div id="keys-wrapper"></div>';
+document.getElementById('app').innerHTML = '<p id="mode"></p><div id="display"><p id="value">0</p></div><div id="keys-wrapper"></div>';
 const digit = 'digit';
 const operator = 'operator';
 const keysWrapper = document.getElementById('keys-wrapper');
