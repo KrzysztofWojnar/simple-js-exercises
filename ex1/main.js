@@ -6,6 +6,12 @@ document.getElementById('app').innerHTML = '<p id="mode"></p><div id="display"><
 const digit = 'digit';
 const operator = 'operator';
 const keysWrapper = document.getElementById('keys-wrapper');
+const operators = {
+    "+": function(a, b) { return a - (-b) },
+    "-": function(a, b) { return a - b },
+    "*": function(a, b) { return a * b },
+    "/": function(a, b) { return a / b },
+};
 [
     { class: digit, value: 7 },
     { class: digit, value: 8 },
@@ -32,6 +38,7 @@ const keysWrapper = document.getElementById('keys-wrapper');
         buttonElement.className = buttonData.class;
         buttonElement.setAttribute('value', buttonData.value);
     }
+    buttonElement.operation = buttonData.operation;
     keysWrapper.appendChild(buttonElement);
 });
 
@@ -57,6 +64,6 @@ Array.from(
 
 document.getElementById('calculate').addEventListener('click', () => {
     const [operand1, ...operator] = document.getElementById('mode').innerText.split(' ');
-    setDisplayContent(calculate(operand1, operator.join(' '), getDisplayContent()));
+    setDisplayContent(calculate(operand1, operators[operator.join(' ')], getDisplayContent()));
     document.getElementById('mode').innerText = '';
 });
