@@ -34,15 +34,14 @@ const server = http.createServer((req, res) => {
       res.setHeader("Content-Type", mimetype);
       fs.createReadStream(filePath).pipe(res);
       return
-    } else if (req.url.endsWith('ore-price')) {
+    } else if (req.url.endsWith('bench-size')) {
       res.setHeader("Content-Type", "application/json");
       res.statusCode = 200;
-      const reponseObj = { price: Math.random() * 100 };
+      const reponseObj = { size: Math.round(Math.random() * 100) };
       res.write(JSON.stringify(reponseObj));
       console.log(reponseObj);
       res.end();
       return;
-      // fs.createReadStream(filePath).pipe(res);
     } else {
       filePath = path.resolve("./404.html");
       res.statusCode = 404;
