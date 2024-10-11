@@ -9,6 +9,7 @@
   "scripts": {
     "test": "vitest run",
     "develop4.1": "vitest tests/ex4.1.spec.js",
-    "develop4.2": "vitest tests/ex4.2.spec.js"
+    "develop4.2": "vitest tests/ex4.2.spec.js",
+    "develop4.3": "vitest tests/ex4.3.spec.js"
   }
 }

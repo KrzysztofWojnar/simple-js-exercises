@@ -38,6 +38,4 @@ describe('ex4.2', () => {
     it.skip('value in array is a wrong value', () => {
         expect(exercise([1, 3, 'hi mom'])).toBe(3);
     });
-
-
 });
