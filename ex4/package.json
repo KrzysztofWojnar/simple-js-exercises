@@ -2,5 +2,13 @@
   "name": "my-app",
   "private": true,
   "version": "0.0.0",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "vitest": "^2.1.2"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "develop4.1": "vitest tests/ex4.1.spec.js",
+    "develop4.2": "vitest tests/ex4.2.spec.js"
+  }
 }
