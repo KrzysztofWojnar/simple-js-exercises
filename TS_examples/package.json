@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "ex1_0": "node \"./examples/01_JS code valid in TS/Example_1_0.js\"",
+    "ex1_1": "npx ts-node \"./examples/01_JS code valid in TS/Example_1_1.ts\"",
+    "ex2_0": "npx ts-node \"./examples/02_Types inference/Example_2_0.ts\"",
+    "ex3_0": "npx ts-node \"./examples/03_Types/Example_3_0.ts\"",
+    "ex3_1": "npx ts-node \"./examples/03_Types/Example_3_1.ts\"",
+    "ex3_2": "npx ts-node \"./examples/03_Types/Example_3_2.ts\"",
+    "ex3_3": "npx ts-node \"./examples/03_Types/Example_3_3.ts\"",
+    "ex3_4": "npx ts-node \"./examples/03_Types/Example_3_4.ts\"",
+    "ex4_0": "npx ts-node \"./examples/04_Enum/Example_4_0.ts\"",
+    "ex4_1": "npx ts-node \"./examples/04_Enum/Example_4_1.ts\"",
+    "ex4_2": "npx ts-node \"./examples/04_Enum/Example_4_2.ts\"",
+    "ex4_3": "npx ts-node \"./examples/04_Enum/Example_4_3.ts\"",
+    "task3_0": "npx ts-node \"./tasks/03_Types/Task_3_0.ts\"",
+    "task3_1": "npx ts-node \"./tasks/03_Types/Task_3_1.ts\""
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
