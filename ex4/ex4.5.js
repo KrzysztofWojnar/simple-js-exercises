@@ -6,5 +6,15 @@
 */
 
 export function exercise(date) {
-    return null;
+    if (typeof date !== 'string' || date.length !== 10) {
+        return null;
+    }
+    if (Array.from(date).filter(char => char === '-').length !== 2) {
+        return null;
+    }
+    const [DD, MM, YYYY] = date.split('-');
+    if (new Date(YYYY, MM - 1, DD).getMonth() !== MM - 1) {
+        return null;
+    }
+    return `${YYYY}.${MM}.${DD}`;
 }

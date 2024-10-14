@@ -13,5 +13,7 @@
 */
 
 export function exercise(shoppingList) {
-    return null;
+    let result = 0;
+    Object.values(shoppingList).forEach(item => result += Math.round(item.price * 100 * item.quantity) / 100);
+    return result;
 }
