@@ -1,0 +1,10 @@
+echo 'STARTING!'
+cd ./ex1
+npm install
+echo '1/3'
+cd ../ex4
+npm install
+echo '2/3'
+cd ../playwright-template
+npm install
+echo 'DONE!'
