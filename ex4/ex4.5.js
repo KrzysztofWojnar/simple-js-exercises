@@ -7,18 +7,14 @@
 */
 
 export function exercise(validator) {
-    if (validator('0001') === true) {
-        return '0001';
-    } else if (validator('0002') === true) {
-        return '0002';
-    } else if (validator('4115') === true) {
-        return '0003';
-    } else if (validator('0004') === true) {
-        return '0004';
-    } else if (validator('0355') === true) {
-        return '0355';
-    } else {
-        throw new Error('Implement the rest!'); // or try another way...
+    if (typeof validator !== 'function') {
+        return null;
+    }
+    for (let i = 0; i < 10000; i++) {
+        const secretCodeGuess = String(i).padStart(4, '0');
+        if (validator(secretCodeGuess)) {
+            return secretCodeGuess;
+        }
     }
 }
 

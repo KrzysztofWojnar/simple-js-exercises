@@ -7,5 +7,5 @@
 */
 
 export function exercise(...params) {
-    return null;
+    return params.reduce((a, b) => a + Number(b), 0);
 }

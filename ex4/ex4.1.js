@@ -7,5 +7,5 @@
 */
 
 export function exercise(radius) {
-    return 0;
+    return radius * radius * Math.PI;
 }
