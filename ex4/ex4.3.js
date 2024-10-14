@@ -6,5 +6,6 @@
 */
 
 export function exercise(numbers) {
-    return null;
+    if (!(numbers instanceof Array)) return null;
+    return Math.max(...numbers);
 }
