@@ -6,9 +6,6 @@
 */
 
 export function exercise(date) {
-    if (typeof date !== 'string') return null;
-    if (!date.match(/\d\d-\d\d-\d{4}/)) return null;
-    const [DD, MM, YYYY] = date.split('-');
-    return `${YYYY}.${MM}.${DD}`;
+    return null;
 }
 
