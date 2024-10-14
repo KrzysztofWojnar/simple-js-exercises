@@ -1,8 +1,8 @@
-//    Ex 4.2 Implement following function. Use Math.PI. Don't worry about non-number values
+//    Ex 4.2 Implement following function.
 
 /**
- * this function calculates the area of ​​a circle
- * @param {number[]} params numbers to sum
+ * this function sums the passed numbers 
+ * @param {...number} params numbers to sum
  * @returns {number} sum of the arguments
 */
 

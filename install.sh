@@ -1,10 +1,11 @@
 echo 'STARTING!'
 cd ./ex1
-npm install
 echo '1/3'
-cd ../ex4
 npm install
+cd ../ex4
 echo '2/3'
+npm install
 cd ../playwright-template
+echo '3/3'
 npm install
 echo 'DONE!'
