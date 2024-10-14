@@ -2,40 +2,19 @@ import { describe, expect, it } from 'vitest';
 import { exercise } from '../ex4.2';
 
 describe('ex4.2', () => {
-    it('happy path', () => {
-        expect(exercise([2, 3])).toBe(3);
+    it('single argument', () => {
+        expect(exercise(4)).toBe(4);
     });
-    it('happy path - one value in array', () => {
-        expect(exercise([13])).toBe(13);
+    it('happy path - few elements', () => {
+        expect(exercise(2, 14, 5)).toBe(21);
     });
-    it('two equal values', () => {
-        expect(exercise([7, 7])).toBe(7);
+    it('Result is negative', () => {
+        expect(exercise(53, -90)).toBe(-37);
     });
-    it('three values', () => {
-        expect(exercise([1, 3, 5])).toBe(5);
+    it('null is ignored', () => {
+        expect(exercise(99, null, 13)).toBe(112);
     });
-    it('three not sorted values', () => {
-        expect(exercise([3, 12, 4])).toBe(12);
-    });
-    it('negative values', () => {
-        expect(exercise([-38, -12, -72])).toBe(-12);
-    });
-    it('negative and positive values', () => {
-        expect(exercise([-3, 4, 5, -99])).toBe(5);
-    });
-    it('the argument is of wrong type', () => {
-        expect(exercise(null)).toBe(null);
-    });
-    it('the argument is of type number, not an array of numbers', () => {
-        expect(exercise(1)).toBe(null);
-    });
-    it.skip('passed array is empty', () => {
-        expect(exercise([])).toBe(-Infinity);
-    });
-    it.skip('value in array is of wrong type', () => {
-        expect(exercise([1, 3, '5'])).toBe(5);
-    });
-    it.skip('value in array is a wrong value', () => {
-        expect(exercise([1, 3, 'hi mom'])).toBe(3);
+    it('string is casted', () => {
+        expect(exercise('9', 11)).toBe(20);
     });
 });

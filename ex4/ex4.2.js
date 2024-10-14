@@ -1,10 +1,11 @@
-//    Ex 4.2 Implement following function
+//    Ex 4.2 Implement following function. Use Math.PI. Don't worry about non-number values
 
 /**
- * @param {Array<number>} numbers array of numbers
- * @returns {number | null} the highest number in the passed array. It returns null if passed argument is not an array.
+ * this function calculates the area of ​​a circle
+ * @param {number[]} params numbers to sum
+ * @returns {number} sum of the arguments
 */
 
-export function exercise(numbers) {
+export function exercise(...params) {
     return null;
 }

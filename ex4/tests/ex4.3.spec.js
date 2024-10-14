@@ -1,40 +1,41 @@
 import { describe, expect, it } from 'vitest';
 import { exercise } from '../ex4.3';
-import { validator as publicCodeValidator } from './publicCodeValidator';
-import { validator as validator0 } from './secretCodeValidator0';
-import { validator as validator1 } from './secretCodeValidator1';
-import { validator as validator2 } from './secretCodeValidator2';
-import { validator as validator3 } from './secretCodeValidator3';
 
 describe('ex4.3', () => {
-    it('validator0 - public code 0002', () => {
-        const result = exercise(publicCodeValidator);
-        expect(result).toBeTypeOf('string');
-        expect(result).toMatch(/\d{4}/);
-        expect(publicCodeValidator(result)).toBe(true);
+    it('happy path', () => {
+        expect(exercise([2, 3])).toBe(3);
     });
-    it('validator0 - known secret code, solution for this is 0003', () => {
-        const result = exercise(validator0);
-        expect(result).toBeTypeOf('string');
-        expect(result).toMatch(/\d{4}/);
-        expect(validator0(result)).toBe(true);
+    it('happy path - one value in array', () => {
+        expect(exercise([13])).toBe(13);
     });
-    it('validator1', () => {
-        const result = exercise(validator1);
-        expect(result).toBeTypeOf('string');
-        expect(result).toMatch(/\d{4}/);
-        expect(validator1(result)).toBe(true);
+    it('two equal values', () => {
+        expect(exercise([7, 7])).toBe(7);
     });
-    it('validator2', () => {
-        const result = exercise(validator2);
-        expect(result).toBeTypeOf('string');
-        expect(result).toMatch(/\d{4}/);
-        expect(validator2(result)).toBe(true);
+    it('three values', () => {
+        expect(exercise([1, 3, 5])).toBe(5);
     });
-    it('validator3', () => {
-        const result = exercise(validator3);
-        expect(result).toBeTypeOf('string');
-        expect(result).toMatch(/\d{4}/);
-        expect(validator3(result)).toBe(true);
+    it('three not sorted values', () => {
+        expect(exercise([3, 12, 4])).toBe(12);
+    });
+    it('negative values', () => {
+        expect(exercise([-38, -12, -72])).toBe(-12);
+    });
+    it('negative and positive values', () => {
+        expect(exercise([-3, 4, 5, -99])).toBe(5);
+    });
+    it('the argument is of wrong type', () => {
+        expect(exercise(null)).toBe(null);
+    });
+    it('the argument is of type number, not an array of numbers', () => {
+        expect(exercise(1)).toBe(null);
+    });
+    it.skip('passed array is empty', () => {
+        expect(exercise([])).toBe(-Infinity);
+    });
+    it.skip('value in array is of wrong type', () => {
+        expect(exercise([1, 3, '5'])).toBe(5);
+    });
+    it.skip('value in array is a wrong value', () => {
+        expect(exercise([1, 3, 'hi mom'])).toBe(3);
     });
 });

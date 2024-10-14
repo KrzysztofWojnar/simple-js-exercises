@@ -1,3 +1,3 @@
 export function validator(val) {
-    return val === '0002';
+    return val === '0355';
 }
