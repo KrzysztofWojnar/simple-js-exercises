@@ -2,57 +2,31 @@ import { describe, expect, it } from 'vitest';
 import { exercise } from '../ex4.6';
 
 describe('ex4.6', () => {
-    it('happy path - one-entry shopping list', () => {
-        const shoppingList = {
-            milk: {
-                price: 2.99,
-                quantity: 1
-            },
-        };
-        expect(exercise(shoppingList)).toBe(2.99);
+    it('happy path', () => {
+        expect(exercise('25-02-2023')).toBe('2023.02.25');
     });
-    it('happy path - short shopping list', () => {
-        const shoppingList = {
-            milk: {
-                price: 2.99,
-                quantity: 1
-            },
-            butter: {
-                price: 6.99,
-                quantity: 1
-            },
-            garlic: {
-                price: 1.49,
-                quantity: 1
-            },
-        };
-        expect(exercise(shoppingList)).toBe(11.47);
+    it('happy path - month and day are the same', () => {
+        expect(exercise('03-03-2023')).toBe('2023.03.03');
     });
-    it('two sticks of butter', () => {
-        const shoppingList = {
-            bread: {
-                price: 3.49,
-                quantity: 1
-            },
-            butter: {
-                price: 6.99,
-                quantity: 2
-            },
-        };
-        expect(exercise(shoppingList)).toBe(17.47);
+    it('happy path - December', () => {
+        expect(exercise('03-12-2023')).toBe('2023.12.03');
     });
-    it('fruits are paid for according to their weight', () => {
-        const shoppingList = {
-            lemon: {
-                price: 8.99,
-                quantity: 0.157
-            },
-            fabricSoftener: {
-                price: 18.99,
-                quantity: 1,
-                volume: 1.32
-            },
-        };
-        expect(exercise(shoppingList)).toBe(20.40);
+    it('happy path - Januaryt', () => {
+        expect(exercise('13-01-2023')).toBe('2023.01.13');
+    });
+    it('wrong date', () => {
+        expect(exercise('30-30-2023')).toBe(null);
+    });
+    it('wrong format', () => {
+        expect(exercise('25-3-2023')).toBe(null);
+    });
+    it('wrong value', () => {
+        expect(exercise('93039')).toBe(null);
+    });
+    it('the argument is of wrong type', () => {
+        expect(exercise(null)).toBe(null);
+    });
+    it.skip('30 Feb', () => {
+        expect(exercise('30-02-2023')).toBe(null);
     });
 });
