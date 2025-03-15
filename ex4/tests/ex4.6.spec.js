@@ -24,6 +24,7 @@ describe('ex4.6', () => {
         expect(exercise('93039')).toBe(null);
     });
     it('the argument is of wrong type', () => {
+        // @ts-ignore
         expect(exercise(null)).toBe(null);
     });
     it.skip('30 Feb', () => {

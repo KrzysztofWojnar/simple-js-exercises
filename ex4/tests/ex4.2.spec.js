@@ -12,9 +12,11 @@ describe('ex4.2', () => {
         expect(exercise(53, -90)).toBe(-37);
     });
     it('null is ignored', () => {
+        // @ts-ignore
         expect(exercise(99, null, 13)).toBe(112);
     });
     it('string is casted', () => {
+        // @ts-ignore
         expect(exercise('9', 11)).toBe(20);
     });
 });

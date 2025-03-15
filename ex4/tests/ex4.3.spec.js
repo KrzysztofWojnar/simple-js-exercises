@@ -24,18 +24,22 @@ describe('ex4.3', () => {
         expect(exercise([-3, 4, 5, -99])).toBe(5);
     });
     it('the argument is of wrong type', () => {
+        // @ts-ignore
         expect(exercise(null)).toBe(null);
     });
     it('the argument is of type number, not an array of numbers', () => {
+        // @ts-ignore
         expect(exercise(1)).toBe(null);
     });
     it.skip('passed array is empty', () => {
         expect(exercise([])).toBe(-Infinity);
     });
     it.skip('value in array is of wrong type', () => {
+        // @ts-ignore
         expect(exercise([1, 3, '5'])).toBe(5);
     });
     it.skip('value in array is a wrong value', () => {
+        // @ts-ignore
         expect(exercise([1, 3, 'hi mom'])).toBe(3);
     });
 });
