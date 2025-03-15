@@ -1,17 +1,10 @@
 //    Ex 4.6 Implement following function
 
 /**
- * @typedef ShoppingEntry
- * @property {number} price
- * @property {number} quantity
- */
-
-/**
- * Calculates how much all the items on the shopping list will cost
- * @param {Record<string, ShoppingEntry}>} shoppingList
- * @returns {number} Total amount to be paid for all products on the list. Incorrect values would be ignored. Use Math.round() to return with two decimal places of accuracy
+ * @param {string} date in format DD-MM-YYYY (like 25-02-2023 for 15th February 2023)
+ * @returns {string} the same date as YYYY.MM.DD (2023.02.25). If the argument is not a string return null. If the date is incorrect return null.
 */
 
-export function exercise(shoppingList) {
+export function exercise(date) {
     return null;
 }

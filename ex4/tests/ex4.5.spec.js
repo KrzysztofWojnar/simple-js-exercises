@@ -1,32 +1,40 @@
 import { describe, expect, it } from 'vitest';
 import { exercise } from '../ex4.5';
+import { validator as publicCodeValidator } from './publicCodeValidator';
+import { validator as validator0 } from './secretCodeValidator0';
+import { validator as validator1 } from './secretCodeValidator1';
+import { validator as validator2 } from './secretCodeValidator2';
+import { validator as validator3 } from './secretCodeValidator3';
 
 describe('ex4.5', () => {
-    it('happy path', () => {
-        expect(exercise('25-02-2023')).toBe('2023.02.25');
+    it('validator0 - public code 0355', () => {
+        const result = exercise(publicCodeValidator);
+        expect(result).toBeTypeOf('string');
+        expect(result).toMatch(/\d{4}/);
+        expect(publicCodeValidator(result)).toBe(true);
     });
-    it('happy path - month and day are the same', () => {
-        expect(exercise('03-03-2023')).toBe('2023.03.03');
+    it('validator0 - known secret code, solution for this is 0003', () => {
+        const result = exercise(validator0);
+        expect(result).toBeTypeOf('string');
+        expect(result).toMatch(/\d{4}/);
+        expect(validator0(result)).toBe(true);
     });
-    it('happy path - December', () => {
-        expect(exercise('03-12-2023')).toBe('2023.12.03');
+    it('validator1', () => {
+        const result = exercise(validator1);
+        expect(result).toBeTypeOf('string');
+        expect(result).toMatch(/\d{4}/);
+        expect(validator1(result)).toBe(true);
     });
-    it('happy path - Januaryt', () => {
-        expect(exercise('13-01-2023')).toBe('2023.01.13');
+    it('validator2', () => {
+        const result = exercise(validator2);
+        expect(result).toBeTypeOf('string');
+        expect(result).toMatch(/\d{4}/);
+        expect(validator2(result)).toBe(true);
     });
-    it('wrong date', () => {
-        expect(exercise('30-30-2023')).toBe(null);
-    });
-    it('wrong format', () => {
-        expect(exercise('25-3-2023')).toBe(null);
-    });
-    it('wrong value', () => {
-        expect(exercise('93039')).toBe(null);
-    });
-    it('the argument is of wrong type', () => {
-        expect(exercise(null)).toBe(null);
-    });
-    it.skip('30 Feb', () => {
-        expect(exercise('30-02-2023')).toBe(null);
+    it('validator3', () => {
+        const result = exercise(validator3);
+        expect(result).toBeTypeOf('string');
+        expect(result).toMatch(/\d{4}/);
+        expect(validator3(result)).toBe(true);
     });
 });
