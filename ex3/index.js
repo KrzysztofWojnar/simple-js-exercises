@@ -13,6 +13,9 @@ const extensions = {
 
 const server = http.createServer((req, res) => {
   console.log("Request for " + req.url + " by method " + req.method);
+  if (typeof req.url !== 'string') {
+    throw new Error('req.url must be a string');
+  }
   if (req.method == "GET") {
     const fileUrl = req.url == '/' ? "/index.html" : req.url;
 
@@ -42,6 +45,12 @@ const server = http.createServer((req, res) => {
       console.log(reponseObj);
       res.end();
       return;
+    } else if (req.url.endsWith('greeting')) {
+      filePath = path.resolve("./greeting.html");
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "text/html");
+      fs.createReadStream(filePath).pipe(res);
+      return;
     } else {
       filePath = path.resolve("./404.html");
       res.statusCode = 404;
@@ -50,7 +59,7 @@ const server = http.createServer((req, res) => {
       return
     }
   } else {
-    filePath = path.resolve("./404.html");
+    const filePath = path.resolve("./404.html");
     res.statusCode = 404;
     res.setHeader("Content-Type", "text/html");
     fs.createReadStream(filePath).pipe(res);
